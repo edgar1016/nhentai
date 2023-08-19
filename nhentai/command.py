@@ -93,7 +93,7 @@ def main():
                 with DB() as db:
                     db.add_one(doujinshi.id)
 
-            if not options.is_nohtml and not options.is_cbz and not options.is_pdf:
+            if not options.is_nohtml and not options.is_cbz and not options.is_pdf and not options.dryrun:
                 generate_html(options.output_dir, doujinshi, template=constant.CONFIG['template'])
             elif options.is_cbz:
                 generate_cbz(options.output_dir, doujinshi, options.rm_origin_dir, True, options.move_to_folder)
